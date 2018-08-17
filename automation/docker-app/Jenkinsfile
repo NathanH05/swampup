@@ -92,7 +92,7 @@ def testApp (tag) {
     docker.image(tag).withRun('-p 8181:8181') {c ->
         sleep 10
         def stdout = sh(script: 'curl "http://localhost:8181/swampup/"', returnStdout: true)
-        if (stdout.contains("Welcome Docker Lifecycle Training")) {
+        if (stdout.contains("This is the home page for a sample application")) {
             println "*** Passed Test: " + stdout
         } else {
             println "*** Failed Test: " + stdout
